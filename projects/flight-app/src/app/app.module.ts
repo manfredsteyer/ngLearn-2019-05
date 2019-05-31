@@ -50,7 +50,7 @@ import { environment } from '../environments/environment';
     BasketComponent
   ],
   schemas: [
-    // Todo: Add this schema: CUSTOM_ELEMENTS_SCHEMA
+    CUSTOM_ELEMENTS_SCHEMA
   ],
   providers: [],
   bootstrap: [AppComponent]

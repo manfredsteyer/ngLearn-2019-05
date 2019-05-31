@@ -18,7 +18,7 @@ export class DashboardPageComponent {
 		this._add('dashboard-tile');
 	}
 
-	private _add(elementName: string): void {
+	private _add(elementName = 'dashboard-tile'): void {
 
 		const data =	[
 			Math.round(Math.random() * 100),
@@ -27,6 +27,18 @@ export class DashboardPageComponent {
 		];
 
 		const content = document.getElementById('content');
+
+		const tile = document.createElement(elementName);
+		tile['a'] = data[0];
+		tile['b'] = data[1];
+		tile['c'] = data[2];
+
+		tile.setAttribute('class', 'col-lg-4 col-md-3 col-sm-2');
+
+		// tile.addEventListener('click', () => { });
+
+		content.appendChild(tile);
+
 
 		// TODO: Dynamically add a dashboard-tile element to the content
 		//				 + set data's values to the attributes a, b, and c.
@@ -43,8 +55,8 @@ export class DashboardPageComponent {
 	}
 
 	addExternal(): void {
-		this.externalService.load();
 		this._add('external-dashboard-tile');
+		this.externalService.load();
 	}
 
 
